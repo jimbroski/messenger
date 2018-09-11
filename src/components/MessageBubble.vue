@@ -38,7 +38,7 @@ export default {
 
 <style scoped lang="scss">
 .wrapper {
-  margin: var(--size-side) var(--size-side--half);
+  margin: 10px var(--size-side--half);
 
   small {
     margin-top: 3px;

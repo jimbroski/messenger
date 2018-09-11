@@ -15,7 +15,7 @@
 import MessageBubble from './MessageBubble.vue'
 
 export default {
-  name: 'ChatHistory',
+  name: 'AppMain',
   props: {
     messages: Array
   },

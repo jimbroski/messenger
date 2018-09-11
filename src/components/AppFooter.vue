@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'MessageField'
+  name: 'AppFooter'
 }
 </script>
 
