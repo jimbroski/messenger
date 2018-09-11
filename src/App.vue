@@ -51,6 +51,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 * { box-sizing: border-box; }
 
 // Typography
+html, body { height: 100%; }
 body {
   color: var(--clr-text);
   font-size: var(--size-text);
@@ -66,7 +67,7 @@ a { color: var(--clr-main)}
 #app {
   margin: auto;
   max-width: 620px;
-  height: 100vh;
+  height: 100%;
 
   display: grid;
   grid-template-rows: max-content auto max-content;
