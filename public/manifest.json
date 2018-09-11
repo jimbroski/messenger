@@ -3,18 +3,18 @@
   "short_name": "messenger",
   "icons": [
     {
-      "src": "/img/icons/android-chrome-192x192.png",
-      "sizes": "192x192",
+      "src": "/img/icons/favicon-196x196.png",
+      "sizes": "196x196",
       "type": "image/png"
     },
     {
-      "src": "/img/icons/android-chrome-512x512.png",
-      "sizes": "512x512",
+      "src": "/img/icons/mstile-310x310.png",
+      "sizes": "310x310",
       "type": "image/png"
     }
   ],
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#4DBA87"
+  "background_color": "#fff",
+  "theme_color": "#087E8B"
 }
