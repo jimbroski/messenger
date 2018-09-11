@@ -1,20 +1,24 @@
 <template lang="html">
   <footer>
-    <textarea rows="1"></textarea>
+    <textarea v-model="message" v-autosize="message" rows="1"></textarea>
     <a href="#">Send</a>
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'AppFooter'
+  name: 'AppFooter',
+  data: function(){
+    return {
+      message: ''
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
 footer {
   background-color: white;
-  height: 40px;
 
   display: flex;
   align-items: center;
@@ -32,6 +36,8 @@ footer {
     border-radius: 18px;
     margin-right: 5px;
     padding: 5px 10px;
+
+    max-height: 140px;
   }
   a {
     text-decoration: none;

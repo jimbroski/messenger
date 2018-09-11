@@ -136,19 +136,13 @@ a { color: var(--clr-main)}
   max-width: 620px;
   height: 100vh;
 
-  display: flex;
-  flex-direction: column;
+  display: grid;
 
-  &>header { flex-shrink: 0; }
   &>main {
-    flex-grow: 1;
     overflow: scroll;
     // Workaround to autoscroll to bottom:
     display: flex;
     flex-direction: column-reverse;
   }
-  &>footer { flex-shrink: 0; }
-
-  // main { background-color: pink; }
 }
 </style>
