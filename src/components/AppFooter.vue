@@ -1,5 +1,5 @@
 <template lang="html">
-  <footer>
+  <footer v-bind:class="mode ? 'response' : ''">
     <textarea v-model="message" v-autosize="message" rows="1"></textarea>
     <a href="#">Send</a>
   </footer>
@@ -8,6 +8,9 @@
 <script>
 export default {
   name: 'AppFooter',
+  props: {
+    mode: Number
+  },
   data: function(){
     return {
       message: ''
@@ -43,6 +46,13 @@ footer {
     text-decoration: none;
     font-weight: bold;
     color: var(--clr-accent);
+  }
+
+  &.response {
+    background-color: var(--clr-main);
+
+    textarea { background-color: white; }
+    a { color: var(--clr-text-lt) }
   }
 }
 </style>

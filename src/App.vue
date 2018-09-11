@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <AppHeader v-bind:mode="activeSender" />
-    <AppMain v-bind:messages="messages" />
-    <AppFooter />
+    <AppMain v-bind:mode="activeSender" v-bind:messages="messages" />
+    <AppFooter v-bind:mode="activeSender" />
   </div>
 </template>
 

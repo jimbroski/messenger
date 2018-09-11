@@ -2,10 +2,12 @@
   <main>
     <div>
       <MessageBubble v-for="message in messages" v-bind="message" />
-      <div class="responseBubble">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+      <div v-bind:class="mode ? 'response--active' : ''">
+        <div class="responseBubble">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
       </div>
     </div>
   </main>
@@ -17,7 +19,8 @@ import MessageBubble from './MessageBubble.vue'
 export default {
   name: 'AppMain',
   props: {
-    messages: Array
+    messages: Array,
+    mode: Number
   },
   components: {
     MessageBubble
@@ -43,5 +46,12 @@ export default {
   margin: 4px 2px 2px;
   display: inline-block;
   border-radius: 50%;
+}
+
+.response--active {
+  text-align: right;
+
+  .responseBubble { background-color: #eee; }
+  .circle { background-color: #888; }
 }
 </style>
