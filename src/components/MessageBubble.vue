@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="wrapper" v-bind:data-sender="sender">
-    <div class="bubble">
+    <div v-on:click="showDate = !showDate" class="bubble">
       {{body}}
     </div>
-    <small>- {{dateLabel}}</small>
+    <small v-bind:class="showDate ? 'active': ''">- {{dateLabel}}</small>
   </div>
 </template>
 
@@ -14,6 +14,11 @@ export default {
     body: String,
     date: Number,
     sender: Number
+  },
+  data: function(){
+    return {
+      showDate: false
+    }
   },
   computed: {
     dateLabel: function(){
@@ -41,12 +46,21 @@ export default {
     text-align: right;
     display: block;
     color: #888;
+
+    opacity: 0;
+    transition: .4s;
+
+    &.active {
+      opacity: 1;
+    }
   }
 }
 .bubble {
   background-color: #eee;
   border-radius: 18px;
   padding: var(--size-side--half);
+
+  cursor: pointer;
 }
 [data-sender="0"] { // sent
   margin-left: 20%;
