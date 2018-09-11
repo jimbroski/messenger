@@ -52,7 +52,8 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 // Typography
 html, body { height: 100%; }
-body {
+body,
+textarea {
   color: var(--clr-text);
   font-size: var(--size-text);
   font-family: "Nunito", Helvetica, Arial, sans-serif;
