@@ -1,11 +1,13 @@
 <template lang="html">
   <footer v-bind:class="mode ? 'response' : ''">
-    <textarea v-model="message" v-autosize="message" rows="1"></textarea>
-    <a href="#">Send</a>
+    <textarea v-model="message" v-autosize="message" rows="1" v-on:keyup.enter="submitMessage"></textarea>
+    <a href="#" v-on:click="submitMessage">Send</a>
   </footer>
 </template>
 
 <script>
+import Store from '../Store.js'
+
 export default {
   name: 'AppFooter',
   props: {
@@ -14,6 +16,20 @@ export default {
   data: function(){
     return {
       message: ''
+    }
+  },
+  methods: {
+    submitMessage: function(event){
+      if(event.shiftKey) return // allow for shift enter
+
+      let messageObj = {
+        body: this.message,
+        sender: this.mode,
+        date: Date.now()
+      }
+
+      Store.submitMessage(messageObj) // submit message to store
+      this.message = '' // reset message input field
     }
   }
 }

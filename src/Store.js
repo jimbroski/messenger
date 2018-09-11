@@ -73,7 +73,11 @@ export default {
     activeSender: 0
   },
   toggleSender(){
-    if(this.debug) console.log('Toggle sender', this.state.activeSender)
+    if(this.debug) console.log('Toggle sender. Previously:', this.state.activeSender)
     this.state.activeSender = +!this.state.activeSender
+  },
+  submitMessage(message){
+    if(this.debug) console.log('Submit message', message)
+    this.state.messages.push(message)
   }
 }
