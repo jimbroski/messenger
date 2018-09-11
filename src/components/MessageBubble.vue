@@ -1,8 +1,6 @@
 <template lang="html">
   <div class="wrapper" v-bind:data-sender="sender">
-    <div v-on:click="showDate = !showDate" class="bubble">
-      {{body}}
-    </div>
+    <div v-on:click="showDate = !showDate" class="bubble">{{body}}</div>
     <small v-bind:class="showDate ? 'active': ''">- {{dateLabel}}</small>
   </div>
 </template>
@@ -59,6 +57,7 @@ export default {
   background-color: #eee;
   border-radius: 18px;
   padding: var(--size-side--half);
+  white-space: pre-wrap;
 
   cursor: pointer;
 }

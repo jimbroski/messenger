@@ -62,7 +62,7 @@ const demoMessages = [ // TODO Remove these demo messages!
   {
     sender: 0,
     date: 1536677019462,
-    body: "Aaaaaaand one last message :)"
+    body: "Aaaaaaand one\nlast message :)"
   }
 ]
 
@@ -78,6 +78,7 @@ export default {
   },
   submitMessage(message){
     if(this.debug) console.log('Submit message', message)
+    message.body = message.body.trim() // trim trailing and leading spaces/line breaks
     this.state.messages.push(message)
   }
 }
