@@ -3,7 +3,7 @@
     <div>
       <MessageBubble v-for="message in messages" v-bind="message" />
       <div v-bind:class="mode ? 'response--active' : ''">
-        <div class="responseBubble">
+        <div v-on:click="toggleSender" class="responseBubble">
           <div class="circle"></div>
           <div class="circle"></div>
           <div class="circle"></div>
@@ -15,12 +15,18 @@
 
 <script>
 import MessageBubble from './MessageBubble.vue'
+import Store from '../Store.js'
 
 export default {
   name: 'AppMain',
   props: {
     messages: Array,
     mode: Number
+  },
+  methods: {
+    toggleSender: function(event){
+      Store.toggleSender()
+    }
   },
   components: {
     MessageBubble
