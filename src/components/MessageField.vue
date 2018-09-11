@@ -20,20 +20,23 @@ footer {
   align-items: center;
   justify-content: stretch;
 
+  padding: var(--size-side--half) var(--size-side);
+
   textarea {
+    font-size: var(--size-text);
     flex-grow: 1;
     resize: none;
     outline: none;
     background-color: #eee;
     border: 0;
     border-radius: 18px;
-    margin: 5px 10px;
+    margin-right: 5px;
     padding: 5px 10px;
   }
   a {
     text-decoration: none;
     font-weight: bold;
-    color: var(--clr-primary);
+    color: var(--clr-accent);
   }
 }
 </style>
