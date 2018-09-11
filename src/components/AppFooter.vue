@@ -23,9 +23,9 @@ export default {
       if(event.shiftKey) return // allow for shift enter
 
       let messageObj = {
-        body: this.message,
         sender: this.mode,
-        date: Date.now()
+        date: Date.now(),
+        body: this.message
       }
 
       Store.submitMessage(messageObj) // submit message to store

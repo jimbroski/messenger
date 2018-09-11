@@ -1,75 +1,15 @@
-const demoMessages = [ // TODO Remove these demo messages!
-  {
-    sender: 0,
-    date: 1536677019462,
-    body: "Hello I think this is great!"
-  },
-  {
-    sender: 1,
-    date: 1536677019462,
-    body: "This is a response!"
-  },
-  {
-    sender: 0,
-    date: 1536677019462,
-    body: "Yet another message from me! May be a little bit longer but that's exactly the kind of stuff we need to test here!"
-  },
-  {
-    sender: 0,
-    date: 1536677019462,
-    body: "Aaaaaaand one last message :)"
-  },
-  {
-    sender: 1,
-    date: 1536677019462,
-    body: "This is a response!"
-  },
-  {
-    sender: 0,
-    date: 1536677019462,
-    body: "Yet another message from me! May be a little bit longer but that's exactly the kind of stuff we need to test here!"
-  },
-  {
-    sender: 0,
-    date: 1536377019462,
-    body: "Aaaaaaand one last message :)"
-  },
-  {
-    sender: 1,
-    date: 1536697018462,
-    body: "This is a response!"
-  },
-  {
-    sender: 0,
-    date: 1536678019462,
-    body: "Yet another message from me! May be a little bit longer but that's exactly the kind of stuff we need to test here!"
-  },
-  {
-    sender: 0,
-    date: 1536677019462,
-    body: "Aaaaaaand one last message :)"
-  },
-  {
-    sender: 1,
-    date: 1536677019462,
-    body: "This is a response!"
-  },
-  {
-    sender: 0,
-    date: 1536677019462,
-    body: "Yet another message from me! May be a little bit longer but that's exactly the kind of stuff we need to test here!"
-  },
-  {
-    sender: 0,
-    date: 1536677019462,
-    body: "Aaaaaaand one\nlast message :)"
-  }
-]
+// const sampleMessages = [
+//   {
+//     sender: 0,
+//     date: 1536677019462,
+//     body: "Hello I think this is great!"
+//   }
+// ]
 
 export default {
   debug: true,
   state: {
-    messages: demoMessages,
+    messages: [],
     activeSender: 0
   },
   toggleSender(){
@@ -80,5 +20,12 @@ export default {
     if(this.debug) console.log('Submit message', message)
     message.body = message.body.trim() // trim trailing and leading spaces/line breaks
     this.state.messages.push(message)
+    localStorage.setItem('messages', JSON.stringify(this.state.messages))
+    if(this.debug) console.log('Updated Localstorage', this.state.messages)
+  },
+  initializeFromStorage(){
+    let messages = JSON.parse(localStorage.getItem('messages') || '[]')
+    if(this.debug) console.log('Initialize app from localstorage', messages)
+    this.state.messages = messages
   }
 }

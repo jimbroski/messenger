@@ -12,6 +12,8 @@ import AppFooter from './components/AppFooter.vue'
 import AppMain from './components/AppMain.vue'
 import Store from './Store.js'
 
+Store.initializeFromStorage()
+
 export default {
   name: 'app',
   data: function(){
