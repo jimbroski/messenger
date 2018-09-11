@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <Header v-bind:mode="0" />
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <main></main>
+    <MessageField />
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import MessageField from './components/MessageField.vue'
 
 export default {
   name: 'app',
   components: {
-    Header
+    Header,
+    MessageField
   }
 }
 </script>
@@ -41,18 +44,26 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 body {
   color: var(--clr-text);
   font-size: 16px;
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  // font-family: "Cabin", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 h1, h2, h3, h4, h5, h6 { font-weight: bold }
 strong, b { font-weight: bold }
 a { color: var(--clr-primary--dk)}
 
 #app {
-  font-family: "Nunito", Helvetica, Arial, sans-serif;
-  // font-family: "Cabin", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
   margin: auto;
   max-width: 620px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  &>header { flex: 0 0; }
+  &>main { flex: 1 1; }
+
+  // main { background-color: pink; }
 }
 </style>

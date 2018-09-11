@@ -39,6 +39,7 @@ header {
   font-weight: bold;
   font-size: 1.3em;
   box-shadow: 0 1px 6px #ccc;
+  z-index: 1;
 
   &.send {
     background-color: white;
