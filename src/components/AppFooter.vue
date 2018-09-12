@@ -42,7 +42,7 @@ footer {
   align-items: center;
   justify-content: stretch;
 
-  margin: var(--size-side--half) var(--size-side--half);
+  margin: 0 var(--size-side--half) var(--size-side--half);
   padding: var(--size-side--half);
 
   border-radius: 20px;

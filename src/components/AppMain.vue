@@ -1,7 +1,11 @@
 <template lang="html">
   <main>
     <div>
-      <MessageBubble v-for="message in messages" v-bind="message" />
+      <template v-for="(message, index) in messages">
+        <TimeLine v-bind:date="message.date" v-if="showTimeline(index)" />
+        <MessageBubble v-bind="message" />
+      </template>
+
       <div v-bind:class="mode ? 'response--active' : ''">
         <div v-on:click="toggleSender" class="responseBubble">
           <div class="circle"></div>
@@ -15,6 +19,7 @@
 
 <script>
 import MessageBubble from './MessageBubble.vue'
+import TimeLine from './TimeLine.vue'
 import Store from '../Store.js'
 
 export default {
@@ -26,10 +31,20 @@ export default {
   methods: {
     toggleSender: function(event){
       Store.toggleSender()
+    },
+    showTimeline: function(index){
+      let thisMessage = this.messages[index]
+      let prevMessage = this.messages[index - 1] || new Date()
+
+      let messageDate = new Date(thisMessage.date)
+      let prevDate = new Date(prevMessage.date)
+
+      return messageDate.toDateString() != prevDate.toDateString()
     }
   },
   components: {
-    MessageBubble
+    MessageBubble,
+    TimeLine
   }
 }
 </script>

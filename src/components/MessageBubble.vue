@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="wrapper" v-bind:data-sender="sender">
-    <div v-on:click="showDate = !showDate" class="bubble">{{body}}</div>
-    <small v-bind:class="showDate ? 'active': ''">- {{dateLabel}}</small>
+    <div class="bubble">{{body}}</div>
+    <small>{{dateLabel}}</small>
   </div>
 </template>
 
@@ -22,13 +22,10 @@ export default {
     dateLabel: function(){
       let messageDate = new Date(this.date)
       let nowDate = new Date(Date.now())
-      let options = {hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short'}
 
-      if(messageDate.getYear() != nowDate.getYear()) {
-        options.year = 'numeric'
-      }
-
-      return messageDate.toLocaleString(navigator.languages[0], options)
+      return messageDate.toLocaleString(navigator.languages[0], {
+        hour: '2-digit', minute: '2-digit'
+      })
     }
   }
 }
@@ -44,13 +41,6 @@ export default {
     text-align: right;
     display: block;
     color: #888;
-
-    opacity: 0;
-    transition: .4s;
-
-    &.active {
-      opacity: 1;
-    }
   }
 }
 .bubble {

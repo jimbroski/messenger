@@ -7,8 +7,6 @@ If you have an impression of a response, use the response feature to write those
 
 ## Roadmap
 
-- set up service worker for offline use
-- Add separation lines for months and years for easier visualization of timelines
 - insert verses easily
 - JSON, txt, csv export (download)
 - "Reset all (DANGER)" feature

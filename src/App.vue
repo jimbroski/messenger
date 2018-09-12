@@ -73,7 +73,7 @@ a { color: var(--clr-main)}
   height: 100%;
 
   display: grid;
-  grid-template-rows: max-content auto max-content;
+  grid-template-rows: max-content auto max-content max-content;
 
   &>main {
     overflow: scroll;
