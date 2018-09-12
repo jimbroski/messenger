@@ -60,6 +60,9 @@ export default {
   white-space: pre-wrap;
 
   cursor: pointer;
+  // Disable mobile blue highlight:
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 [data-sender="0"] { // sent
   margin-left: 20%;

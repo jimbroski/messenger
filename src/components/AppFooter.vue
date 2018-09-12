@@ -60,6 +60,9 @@ footer {
     text-decoration: none;
     font-weight: bold;
     color: var(--clr-accent);
+    // Disable mobile blue highlight:
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
   }
 
   &.response {
