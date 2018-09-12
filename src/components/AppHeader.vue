@@ -38,7 +38,7 @@ header {
   padding: var(--size-side);
   font-weight: bold;
   font-size: 1.3em;
-  box-shadow: 0 0 6px #111;
+  box-shadow: 0 0 6px var(--clr-gray-5);
   z-index: 1;
 
   &.send {

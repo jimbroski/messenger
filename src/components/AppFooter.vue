@@ -49,13 +49,15 @@ footer {
     flex-grow: 1;
     resize: none;
     outline: none;
-    background-color: #eee;
+    background-color: var(--clr-gray-1);
     border: 0;
     border-radius: 18px;
     margin-right: 5px;
     padding: 5px 10px;
 
     max-height: 140px;
+
+    &:focus { background-color: var(--clr-gray-2); }
   }
   a {
     text-decoration: none;

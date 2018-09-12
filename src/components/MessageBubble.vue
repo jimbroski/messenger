@@ -57,7 +57,7 @@ export default {
   display: inline-block;
 
   text-align: left;
-  background-color: #eee;
+  background-color: var(--clr-gray-1);
   border-radius: 18px;
   padding: var(--size-side--half);
   white-space: pre-wrap;
@@ -73,7 +73,7 @@ export default {
 }
 [data-sender="1"] { // response
   display: inline-block;
-  
+
   margin-right: 20%;
 
   .bubble {

@@ -35,12 +35,14 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 // Constants
 :root {
-  --clr-text:         #231F20; // black
-  --clr-text-lt:      #EFF4F4; // ultra light blue
-
-  --clr-main:  #087E8B; // dark blue
-  --clr-main--lt:  #52A8B2;
-  --clr-accent:      #6BBAEC; // cta blue
+  --clr-text:     #231F20; // black
+  --clr-text-lt:  #EFF4F4; // ultra light blue
+  --clr-main:     #087E8B; // dark blue
+  --clr-main--lt: #52A8B2;
+  --clr-accent:   #6BBAEC; // cta blue
+  --clr-gray-1:   rgba(0,0,0,0.08);
+  --clr-gray-2:   rgba(0,0,0,0.12);
+  --clr-gray-5:   rgba(0,0,0,0.4);
 
   --size-side: 18px;
   --size-side--half: 9px;
