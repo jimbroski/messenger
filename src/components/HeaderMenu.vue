@@ -8,13 +8,15 @@
     <div v-if="menuOpen" class="menu__backdrop" v-on:click="menuOpen = !menuOpen">
       <div class="menu">
         <a href="#">Download History</a>
-        <a href="#">Reset All (DANGER!)</a>
+        <a v-on:click="deleteHistory">Reset All (DANGER!)</a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Store from '../Store.js'
+
 export default {
   name: 'HeaderMenu',
   data: function(){
@@ -22,6 +24,11 @@ export default {
       menuOpen: false
     }
   },
+  methods: {
+    deleteHistory: function(event){
+      Store.deleteHistory()
+    }
+  }
 }
 </script>
 
@@ -71,6 +78,7 @@ export default {
     text-decoration: none;
     color: var(--clr-gray-6);
 
+    cursor: pointer;
     // Disable mobile blue highlight:
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;

@@ -27,5 +27,14 @@ export default {
     let messages = JSON.parse(localStorage.getItem('messages') || '[]')
     if(this.debug) console.log('Initialize app from localstorage', messages)
     this.state.messages = messages
+  },
+  deleteHistory(){
+    if(confirm("Danger!\nAre you certain you want to delete your entire chat history?\nThis can not be undone!")){
+      if(this.debug) console.log('Confirmed: Delete all messages')
+      localStorage.setItem('messages', '')
+      this.state.messages = []
+    }else{
+      if(this.debug) console.log('Not confirmed to delete all messages')
+    }
   }
 }
