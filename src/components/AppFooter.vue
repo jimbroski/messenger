@@ -1,6 +1,6 @@
 <template lang="html">
   <footer v-bind:class="mode ? 'response' : ''">
-    <textarea v-model="message" v-autosize="message" rows="1"></textarea>
+    <textarea ref="messageArea" v-model="message" v-autosize="message" rows="1"></textarea>
     <a href="#" v-on:click="submitMessage">Send</a>
   </footer>
 </template>
@@ -28,6 +28,7 @@ export default {
 
       Store.submitMessage(messageObj) // submit message to store
       this.message = '' // reset message input field
+      this.$refs.messageArea.focus()
     }
   }
 }
