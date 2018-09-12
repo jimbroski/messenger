@@ -1,6 +1,6 @@
 <template lang="html">
   <footer v-bind:class="mode ? 'response' : ''">
-    <textarea ref="messageArea" v-model="message" v-autosize="message" rows="1"></textarea>
+    <textarea ref="messageArea" v-model="message" v-autosize="message" rows="1" placeholder="Type Message"></textarea>
     <a href="#" v-on:click="submitMessage">Send</a>
   </footer>
 </template>
@@ -42,24 +42,31 @@ footer {
   align-items: center;
   justify-content: stretch;
 
-  padding: var(--size-side--half) var(--size-side);
+  margin: var(--size-side--half) var(--size-side--half);
+  padding: var(--size-side--half);
+
+  border-radius: 20px;
+  box-shadow: 0 1px 2px var(--clr-gray-5);
+  background-color: white;
 
   textarea {
-    font-size: var(--size-text);
     flex-grow: 1;
-    resize: none;
-    outline: none;
-    background-color: var(--clr-gray-1);
-    border: 0;
-    border-radius: 18px;
+
     margin-right: 5px;
     padding: 5px 10px;
-
     max-height: 140px;
 
-    &:focus { background-color: var(--clr-gray-2); }
+    font-size: var(--size-text);
+
+    resize: none;
+    outline: none;
+
+    border: 0;
+
+    // &:focus { background-color: var(--clr-gray-1); }
   }
   a {
+    margin-right: 4px;
     text-decoration: none;
     font-weight: bold;
     color: var(--clr-accent);
@@ -71,7 +78,14 @@ footer {
   &.response {
     background-color: var(--clr-main);
 
-    textarea { background-color: white; }
+    textarea {
+      background-color: var(--clr-main);
+      color: white;
+
+      &::placeholder {
+        color: rgba(255,255,255,0.6);
+      }
+    }
     a { color: var(--clr-text-lt) }
   }
 }
