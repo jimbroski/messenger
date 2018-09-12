@@ -5,13 +5,15 @@
       <div class="dot"></div>
       <div class="dot"></div>
     </div>
-    <div v-if="menuOpen" class="menu__backdrop" v-on:click="menuOpen = !menuOpen">
-      <div class="menu">
-        <a v-on:click="exportHistory">Export History</a>
-        <a v-on:click="importHistory">Import History</a>
-        <a v-on:click="deleteHistory">Reset All (DANGER!)</a>
+    <transition name="slide-fade">
+      <div v-if="menuOpen" class="menu__backdrop" v-on:click="menuOpen = !menuOpen">
+        <div class="menu">
+          <a v-on:click="exportHistory">Export History</a>
+          <a v-on:click="importHistory">Import History</a>
+          <a v-on:click="deleteHistory">Reset All (DANGER!)</a>
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -88,5 +90,16 @@ export default {
 
     &:last-of-type { border: 0; }
   }
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .25s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateY(-20px);
+  opacity: 0;
 }
 </style>
