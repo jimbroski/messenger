@@ -54,6 +54,9 @@ export default {
   }
 }
 .bubble {
+  display: inline-block;
+
+  text-align: left;
   background-color: #eee;
   border-radius: 18px;
   padding: var(--size-side--half);
@@ -66,8 +69,11 @@ export default {
 }
 [data-sender="0"] { // sent
   margin-left: 20%;
+  text-align: right;
 }
 [data-sender="1"] { // response
+  display: inline-block;
+  
   margin-right: 20%;
 
   .bubble {
