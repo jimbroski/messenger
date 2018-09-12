@@ -1,6 +1,6 @@
 <template lang="html">
   <footer v-bind:class="mode ? 'response' : ''">
-    <textarea v-model="message" v-autosize="message" rows="1" v-on:keyup.enter="submitMessage"></textarea>
+    <textarea v-model="message" v-autosize="message" rows="1"></textarea>
     <a href="#" v-on:click="submitMessage">Send</a>
   </footer>
 </template>
@@ -20,8 +20,6 @@ export default {
   },
   methods: {
     submitMessage: function(event){
-      if(event.shiftKey) return // allow for shift enter
-
       let messageObj = {
         sender: this.mode,
         date: Date.now(),
