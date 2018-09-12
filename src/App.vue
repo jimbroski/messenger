@@ -43,6 +43,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   --clr-gray-1:   rgba(0,0,0,0.08);
   --clr-gray-2:   rgba(0,0,0,0.12);
   --clr-gray-5:   rgba(0,0,0,0.4);
+  --clr-gray-6:   rgba(0,0,0,0.6);
 
   --size-side: 18px;
   --size-side--half: 9px;

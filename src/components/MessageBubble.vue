@@ -13,11 +13,6 @@ export default {
     date: Number,
     sender: Number
   },
-  data: function(){
-    return {
-      showDate: false
-    }
-  },
   computed: {
     dateLabel: function(){
       let messageDate = new Date(this.date)

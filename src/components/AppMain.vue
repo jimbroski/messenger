@@ -59,6 +59,9 @@ export default {
   display: inline-block;
 
   cursor: pointer;
+  // Disable mobile blue highlight:
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 .circle {
   background-color: var(--clr-text-lt);
