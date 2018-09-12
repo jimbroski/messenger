@@ -7,7 +7,8 @@
     </div>
     <div v-if="menuOpen" class="menu__backdrop" v-on:click="menuOpen = !menuOpen">
       <div class="menu">
-        <a v-on:click="exportHistory">Download History</a>
+        <a v-on:click="exportHistory">Export History</a>
+        <a v-on:click="importHistory">Import History</a>
         <a v-on:click="deleteHistory">Reset All (DANGER!)</a>
       </div>
     </div>
@@ -25,12 +26,9 @@ export default {
     }
   },
   methods: {
-    deleteHistory: function(event){
-      Store.deleteHistory()
-    },
-    exportHistory: function(event){
-      Store.exportHistory()
-    }
+    deleteHistory: function(event){ Store.deleteHistory() },
+    exportHistory: function(event){ Store.exportHistory() },
+    importHistory: function(event){ Store.importHistory() }
   }
 }
 </script>

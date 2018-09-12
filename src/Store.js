@@ -41,6 +41,28 @@ export default {
     if(this.debug) console.log('Download History as JSON string')
     this._download('history.json', localStorage.getItem('messages'))
   },
+  importHistory(){
+    let importMessagesString = prompt('Please copy and paste the entire file content of the exported JSON file below.\n\nAttention: This will overwrite your current history and can not be undone!')
+    console.log(importMessagesString)
+    try {
+      let importMessages = JSON.parse(importMessagesString)
+      let hasCorrectMessageObjKeys = importMessages
+                                      .map(message => Object.keys(message).sort())
+                                      .every(obj => {
+                                        return obj.every(str => ['body', 'date', 'sender'].includes(str))
+                                      })
+      if(hasCorrectMessageObjKeys){
+        if(this.debug) console.log('Importing the following JSON', importMessages)
+        localStorage.setItem('messages', importMessagesString)
+        this.state.messages = importMessages
+      }else{
+        if(this.debug) console.log('Import failed because of invalid JSON', importMessages)
+      }
+    }
+    catch(error){
+      if(this.debug) console.log('Error reading JSON', importMessagesString)
+    }
+  },
   _download(filename, content) {
     let element = document.createElement('a')
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content))
