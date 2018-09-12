@@ -1,4 +1,4 @@
-# messenger
+# Message You
 
 A simple application to send messages for two parties. It's meant to help with meditation and prayer. Use it to write thoughts and prayers in the style of messages.
 

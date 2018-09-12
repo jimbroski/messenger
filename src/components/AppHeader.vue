@@ -15,11 +15,11 @@ export default {
       modes: [
         {
           name: 'send',
-          title: 'Messenger'
+          title: 'Message You'
         },
         {
           name: 'respond',
-          title: 'Responding'
+          title: 'Respond to me'
         }
       ]
     }
