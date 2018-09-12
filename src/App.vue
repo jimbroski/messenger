@@ -48,6 +48,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   --size-side: 18px;
   --size-side--half: 9px;
   --size-text: 16px;
+  --size-app: 620px;
 }
 
 // Global Styles
@@ -70,7 +71,7 @@ a { color: var(--clr-main)}
 
 #app {
   margin: auto;
-  max-width: 620px;
+  max-width: var(--size-app);
   height: 100%;
 
   display: grid;

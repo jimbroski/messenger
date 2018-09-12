@@ -7,13 +7,11 @@ If you have an impression of a response, use the response feature to write those
 
 ## Roadmap
 
-- insert verses easily
-- JSON, txt, csv export (download)
-- "Reset all (DANGER)" feature
 - small walk-through tutorial for empty state
-- edit/delete previous messages
+- edit/delete individual messages
 - search & scroll to feature
 
 ### Down the road
 
 - Insert images
+- insert verses easily

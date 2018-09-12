@@ -7,7 +7,7 @@
     </div>
     <div v-if="menuOpen" class="menu__backdrop" v-on:click="menuOpen = !menuOpen">
       <div class="menu">
-        <a href="#">Download History</a>
+        <a v-on:click="exportHistory">Download History</a>
         <a v-on:click="deleteHistory">Reset All (DANGER!)</a>
       </div>
     </div>
@@ -27,6 +27,9 @@ export default {
   methods: {
     deleteHistory: function(event){
       Store.deleteHistory()
+    },
+    exportHistory: function(event){
+      Store.exportHistory()
     }
   }
 }
@@ -56,6 +59,8 @@ export default {
 }
 
 .menu__backdrop {
+  max-width: var(--size-app);
+  margin: auto;
   position: fixed;
   top: 0;
   bottom: 0;
