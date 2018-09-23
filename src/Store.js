@@ -1,8 +1,13 @@
 // const sampleMessages = [
 //   {
-//     sender: 0,
-//     date: 1536677019462,
-//     body: "Hello I think this is great!"
+//     "sender": 0,
+//     "date": 1536677019462,
+//     "body": "Hello I think this is great!"
+//   },
+//   {
+//     "sender": 0,
+//     "date": 1536768358789,
+//     "body": "So this is yet another message coming from my list here"
 //   }
 // ]
 

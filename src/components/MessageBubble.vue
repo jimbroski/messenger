@@ -1,7 +1,9 @@
 <template lang="html">
-  <div class="wrapper" v-bind:data-sender="sender">
-    <div class="bubble">{{body}}</div>
-    <small>{{dateLabel}}</small>
+  <div class="outer" v-bind:data-sender="sender">
+    <div class="inner">
+      <div class="bubble">{{body}}</div>
+      <small>{{dateLabel}}</small>
+    </div>
   </div>
 </template>
 
@@ -27,7 +29,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.wrapper {
+.outer {
   margin: 10px var(--size-side--half);
 
   small {
@@ -52,9 +54,11 @@ export default {
   text-align: right;
 }
 [data-sender="1"] { // response
-  display: inline-block;
-
   margin-right: 20%;
+
+  .inner {
+    display: inline-block;
+  }
 
   .bubble {
     background-color: var(--clr-main);
